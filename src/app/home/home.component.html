@@ -1,32 +1,117 @@
+<img src="assets/logo.png" class="img-fluid" alt="Responsive image">
+<ul ngbNav #nav="ngbNav" [activeId]="1" class="nav-tabs justify-content-left">
+    <li [ngbNavItem]="1">
+        <a ngbNavLink>
+            <span class="material-symbols-outlined">home</span>
+            Inicio
+        </a>
+        <ng-template ngbNavContent>
+            <article class="container mb-5">
 
-        <ngb-carousel *ngIf="images">
-            <ng-template ngbSlide>
-                <div class="picsum-img-wrapper">
-                    <img [src]="images[0]" alt="Random first slide" />
+                <p>Marco Antonio Izaguirre Sierra es un desarrollador de software de clase mundial con 10 años de
+                    experiencia profesional en
+                    el campo de desarrollo web y JavaScript. Ha trabajado para empresas mexicanas, indias y
+                    estadounidenses, lo que
+                    le ha permitido desarrollar habilidades en la gestión de proyectos internacionales y la
+                    adaptabilidad a
+                    diferentes entornos de trabajo.</p>
+
+                <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+
+                    <p>En su trayectoria profesional, Marco ha adquirido experiencia en el diseño, desarrollo y
+                        mantenimiento de
+                        aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript, Node.js, React, Angular y
+                        Vue.js.
+                        Además, ha trabajado en proyectos que involucran bases de datos relacionales y no relacionales,
+                        como MySQL,
+                        MongoDB y Firebase.</p>
+
+                    <p>En su última experiencia laboral, Marco lideró un equipo de desarrollo web en una empresa
+                        estadounidense,
+                        donde se destacó por su capacidad para trabajar en equipo y liderar proyectos de desarrollo de
+                        software de
+                        principio a fin. También ha demostrado habilidades en la resolución de problemas y la toma de
+                        decisiones en
+                        situaciones de alta presión.</p>
+
+                    <p>Marco es un desarrollador de software apasionado y comprometido, que está siempre dispuesto a
+                        aprender nuevas
+                        tecnologías y habilidades para mejorar su trabajo y ofrecer soluciones innovadoras y eficientes
+                        a sus
+                        clientes.</p>
+
                 </div>
-                <div class="carousel-caption">
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <button class="btn btn-sm btn-primary" (click)="isCollapsed = !isCollapsed">
+                    <span *ngIf="isCollapsed" class="material-symbols-outlined">add</span>
+                    <span *ngIf="!isCollapsed" class="material-symbols-outlined">remove</span>
+                    Mostrar
+                    <span *ngIf="isCollapsed">más</span>
+                    <span *ngIf="!isCollapsed">menos</span>
+                </button>
+            </article>
+        </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+        <a ngbNavLink>
+            <span class="material-symbols-outlined">star</span>
+            Habilidades
+        </a>
+        <ng-template ngbNavContent>
+            <article class="container mb-3">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item py-3 px-5" *ngFor="let skill of skills;">
+                            <div class="row">
+                                <div class="col-10">
+                                    <h5>{{ skill.skillName }} : {{skill.skillPorcentage}}%</h5>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                            role="progressbar" attr.aria-valuenow="{{skill.skillPorcentage}}"
+                                            aria-valuemin="0" aria-valuemax="100"
+                                            [style.width.%]="skill.skillPorcentage">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <button class="btn btn-sm btn-light"
+                                        (click)="skill.isCollapsed = !skill.isCollapsed"><span
+                                            class="material-symbols-outlined">add</span></button>
+                                </div>
+                            </div>
+
+                            <small *ngIf="!skill.isCollapsed">
+                                {{skill.skillDescription}}
+                            </small>
+                        </li>
+
+                    </ul>
+
                 </div>
-            </ng-template>
-            <ng-template ngbSlide>
-                <div class="picsum-img-wrapper">
-                    <img [src]="images[1]" alt="Random second slide" />
+            </article>
+        </ng-template>
+    </li>
+    <li [ngbNavItem]="3">
+        <a ngbNavLink>
+            <span class="material-symbols-outlined">workspace_premium</span>
+            Certificaciones</a>
+        <ng-template ngbNavContent>
+            <div class="container my-5">
+                <div class="row">
+                    <div class="col-md-4" *ngFor="let cert of certifications;">
+                        <div class="card my-2" style="height: 420px;">
+                            <img src="assets/{{cert.certImage}}" class="rounded card-img-top" alt="Certification Logo">
+                            <div class="card-body">
+                                <h5 class="card-title">{{cert.certName}}</h5>
+                                <p class="card-text">{{cert.certInstitution}}</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="carousel-caption">
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </ng-template>
-            <ng-template ngbSlide>
-                <div class="picsum-img-wrapper">
-                    <img [src]="images[2]" alt="Random third slide" />
-                </div>
-                <div class="carousel-caption">
-                    <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
-            </ng-template>
-        </ngb-carousel>
-    
-    
+            </div>
+
+        </ng-template>
+    </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

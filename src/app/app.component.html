@@ -30,36 +30,88 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12 col-md-8 col-lg-8">
-  			<router-outlet></router-outlet>
+			<router-outlet></router-outlet>
 		</div>
 		<div class="col-12 col-md-4 col-lg-4">
 			<ul class="list-group">
-				<li class="list-group-item">
+				<li class="list-group-item" *ngFor="let item of posts?.items">
 					<div class="row g-0 m-2">
-						<div class="col-md-4">
-							<img src="..." class="img-fluid rounded-start" alt="...">
-						</div>
-						<div class="col-md-8">
+						<!-- <div class="col-md-4">
+							<img src="..." class="img-fluid rounded-start" alt="..."> 
+						</div> -->
+						<div class="col-md-12">
 							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">This is a wider card with supporting.</p>
+								<h5 class="card-title">{{ item.title }}</h5>
+								<p class="card-text">Author: {{ item.author?.displayName }}</p>
 								<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 							</div>
 						</div>
 					</div>
 				</li>
-				<li class="list-group-item">A second item</li>
-				<li class="list-group-item">A third item</li>
-				<li class="list-group-item">A fourth item</li>
-				<li class="list-group-item">And a fifth one</li>
 			</ul>
 		</div>
 	</div>
 </div>
 
-<footer class="bg-secondary">
+<!-- <footer class="bg-secondary">
 	<menu>
 		<li><a class="nav-link text-light" [routerLink]="'/privacidad'" (click)="isMenuCollapsed = true">Política de privacidad</a></li>
 		<li><a class="nav-link text-light" [routerLink]="'/condiciones'" (click)="isMenuCollapsed = true">Condiciones de uso</a></li>
 	</menu>
+</footer> -->
+
+<!-- Remove the container if you want to extend the Footer to full width. -->
+
+
+<footer class="bg-dark">
+	<div class="container p-4 text-light">
+		<div class="row">
+			<div class="col-lg-6 col-md-12 mb-4">
+				<h5 class="mb-3">Contacto</h5>
+				<p>
+					Desarrollo de software a la medida en la nube, diseño de interfaz de usuario, diseño de experiencia de usuario, especialista en aplicaciones para la web.
+				</p>
+			</div>
+			<div class="col-lg-3 col-md-6 mb-4">
+				<h5 class="mb-3">links</h5>
+				<ul class="list-unstyled mb-0">
+					<li class="mb-1">
+						<a href="#!">Frequently Asked Questions</a>
+					</li>
+					<li class="mb-1">
+						<a href="#!">Delivery</a>
+					</li>
+					<li class="mb-1">
+						<a href="#!">Pricing</a>
+					</li>
+					<li>
+						<a href="#!">Where we deliver?</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-lg-3 col-md-6 mb-4">
+				<h5 class="mb-1">opening hours</h5>
+				<table class="table text-light">
+					<tbody>
+						<tr>
+							<td>Mon - Fri:</td>
+							<td>8am - 9pm</td>
+						</tr>
+						<tr>
+							<td>Sat - Sun:</td>
+							<td>8am - 1am</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="text-center p-3 bg-secondary">
+		© {{ currentYear }} Copyright:
+		<a class="text-dark" href="mailto:marco.izaguirre@live.com">Marco Izaguirre</a>
+	</div>
+	<!-- Copyright -->
 </footer>
+
+
+<!-- End of .container -->
