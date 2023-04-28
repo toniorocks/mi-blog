@@ -32,9 +32,10 @@
 		<div class="col-12 col-md-8 col-lg-8">
 			<router-outlet></router-outlet>
 		</div>
-		<div class="col-12 col-md-4 col-lg-4">
+		<div class="col-12 col-md-4 col-lg-4 container p-3">
+			<h4>Últimas Publicaciones</h4>
 			<ul class="list-group">
-				<li class="list-group-item" *ngFor="let item of posts?.items">
+				<li class="list-group-item" *ngFor="let item of lastPosts">
 					<div class="row g-0 m-2">
 						<!-- <div class="col-md-4">
 							<img src="..." class="img-fluid rounded-start" alt="..."> 
@@ -43,12 +44,17 @@
 							<div class="card-body">
 								<h5 class="card-title">{{ item.title }}</h5>
 								<p class="card-text">Author: {{ item.author?.displayName }}</p>
-								<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+								<p class="card-text">
+									<small class="text-muted"> 
+										{{ item.published | date:'fullDate' | uppercase }}
+									</small>
+								</p>
 							</div>
 						</div>
 					</div>
 				</li>
 			</ul>
+			<a routerLink="/publicaciones" class="btn btn-secondary btn-sm my-4 float-end">Ver todas las publicaciones</a>
 		</div>
 	</div>
 </div>
@@ -76,17 +82,17 @@
 				<h5 class="mb-3">links</h5>
 				<ul class="list-unstyled mb-0">
 					<li class="mb-1">
-						<a href="#!">Frequently Asked Questions</a>
+						<a routerLink="/">Inicio</a>
 					</li>
 					<li class="mb-1">
-						<a href="#!">Delivery</a>
+						<a routerLink="/publicaciones">Publicaciones</a>
 					</li>
 					<li class="mb-1">
-						<a href="#!">Pricing</a>
+						<a routerLink="/visitas">Libro de visitas</a>
 					</li>
-					<li>
-						<a href="#!">Where we deliver?</a>
-					</li>
+					<!-- <li>
+						<a routerLink="/">Where we deliver?</a>
+					</li> -->
 				</ul>
 			</div>
 			<div class="col-lg-3 col-md-6 mb-4">

@@ -1,0 +1,28 @@
+<div class="container pb-5">
+    <div class="col-12 col-md-12 col-lg-12">
+        <h1>Blog</h1>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of posts?.items">
+                <div class="row g-0 m-2">
+                    <!-- <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="..."> 
+                    </div> -->
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ item.title }}</h5>
+                            <p class="card-text">Author: {{ item.author?.displayName }}</p>
+                            <p class="card-text">
+                                <a [routerLink]="['/publicacion', item.id]" class="btn btn-primary btn-sm">Ver</a>
+                                <br>
+                                <small class="text-muted"> 
+                                    {{ item.published | date:'fullDate' }}
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+

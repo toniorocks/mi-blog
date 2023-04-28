@@ -9,6 +9,9 @@ import { BlogComponent } from './blog/blog.component';
 import { PrivacidadComponent } from './privacidad/privacidad.component';
 import { CondicionesComponent } from './condiciones/condiciones.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PublicacionesComponent } from './publicaciones/publicaciones.component';
+import { PublicacionComponent } from './publicaciones/publicacion/publicacion.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,16 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     BlogComponent,
     PrivacidadComponent,
-    CondicionesComponent
+    CondicionesComponent,
+    PublicacionesComponent,
+    PublicacionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
