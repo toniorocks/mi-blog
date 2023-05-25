@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PublicacionesComponent } from './publicaciones/publicaciones.component';
 import { PublicacionComponent } from './publicaciones/publicacion/publicacion.component';
 import { StoreModule } from '@ngrx/store';
+import { MiDatesDirective } from './mi-dates.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { StoreModule } from '@ngrx/store';
     PrivacidadComponent,
     CondicionesComponent,
     PublicacionesComponent,
-    PublicacionComponent
+    PublicacionComponent,
+    MiDatesDirective
   ],
   imports: [
     BrowserModule,

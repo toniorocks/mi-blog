@@ -8,37 +8,13 @@
         <ng-template ngbNavContent>
             <article class="container mb-5">
 
-                <p>Marco Antonio Izaguirre Sierra es un desarrollador de software de clase mundial con 10 años de
-                    experiencia profesional en
-                    el campo de desarrollo web y JavaScript. Ha trabajado para empresas mexicanas, indias y
-                    estadounidenses, lo que
-                    le ha permitido desarrollar habilidades en la gestión de proyectos internacionales y la
-                    adaptabilidad a
-                    diferentes entornos de trabajo.</p>
+                <p>Experienced Senior Software Engineer with 10 years of experience in design, development and operation of systems and workflow applications, featuring JavaScript, Java, PHP, TypeScript, SQL, NoSQL and AWS cloud services.</p>
 
                 <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
 
-                    <p>En su trayectoria profesional, Marco ha adquirido experiencia en el diseño, desarrollo y
-                        mantenimiento de
-                        aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript, Node.js, React, Angular y
-                        Vue.js.
-                        Además, ha trabajado en proyectos que involucran bases de datos relacionales y no relacionales,
-                        como MySQL,
-                        MongoDB y Firebase.</p>
-
-                    <p>En su última experiencia laboral, Marco lideró un equipo de desarrollo web en una empresa
-                        estadounidense,
-                        donde se destacó por su capacidad para trabajar en equipo y liderar proyectos de desarrollo de
-                        software de
-                        principio a fin. También ha demostrado habilidades en la resolución de problemas y la toma de
-                        decisiones en
-                        situaciones de alta presión.</p>
-
-                    <p>Marco es un desarrollador de software apasionado y comprometido, que está siempre dispuesto a
-                        aprender nuevas
-                        tecnologías y habilidades para mejorar su trabajo y ofrecer soluciones innovadoras y eficientes
-                        a sus
-                        clientes.</p>
+                    <p>Skilled at designing mockups with creative tools like Adobe Illustrator, Adobe XD, Microsoft Visio and Pencil.</p>
+                    <p>Proven experience at driving efficient solutions applying good practices and design patterns.</p>
+                    <p>Outstanding team player with a positive attitude to champion delivery of results on time and within budget, having the ability to communicate clearly and effectively when discussing issues with team members and management.</p>
 
                 </div>
                 <button class="btn btn-sm btn-primary" (click)="isCollapsed = !isCollapsed">
@@ -98,7 +74,7 @@
             <div class="container my-5">
                 <div class="row">
                     <div class="col-md-4" *ngFor="let cert of certifications;">
-                        <div class="card my-2" style="height: 420px;">
+                        <div class="card my-2 cert-card">
                             <img src="assets/{{cert.certImage}}" class="rounded card-img-top" alt="Certification Logo">
                             <div class="card-body">
                                 <h5 class="card-title">{{cert.certName}}</h5>

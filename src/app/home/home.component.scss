@@ -1,0 +1,28 @@
+.cert-card{
+    height: 420px;
+}
+
+@media (max-width: 1400px) {
+   .cert-card{
+        height: 370px;
+   }
+}
+
+@media (max-width: 992px) {
+    h5.card-title{
+        font-size: initial;
+    }
+
+    .cert-card{
+        height: 300px;
+   }
+}
+
+@media (max-width: 768px) {
+    h5.card-title{
+        font-size: x-large;
+    }
+    .cert-card{
+         height: auto;
+    }
+ }

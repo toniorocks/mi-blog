@@ -1,1 +1,6 @@
-<p>publicacion works!</p>
+<div class="container">
+    <h1> {{ post?.title }} </h1>
+    <p><b>Author:</b> {{ post?.author?.displayName }}</p>
+    <p><small><b>Date:</b> {{ post?.published | date:'fullDate' }}</small></p>
+    <div class="post-content" [innerHTML]="htmlContent"></div>
+</div>

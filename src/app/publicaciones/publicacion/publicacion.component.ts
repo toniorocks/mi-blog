@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { BloggerService } from '@app/_services/blogger.service';
 import { ActivatedRoute } from '@angular/router';
+import { Item } from '@app/_models/item';
+
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-publicacion',
@@ -9,7 +13,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PublicacionComponent implements OnInit {
 
-  constructor(private bloggerService: BloggerService, private route: ActivatedRoute) { }
+  post:Item | undefined = undefined;
+  htmlContent:any;
+
+  constructor(private bloggerService: BloggerService, private route: ActivatedRoute, private domSanitazer:DomSanitizer) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -20,7 +27,9 @@ export class PublicacionComponent implements OnInit {
 
   protected getPost(postId:string){
     this.bloggerService.getPost(postId).subscribe(resp => {
-      console.log('resp',resp)
+      this.post = resp;
+      this.htmlContent = this.post?.content;
+      this.htmlContent = this.domSanitazer.bypassSecurityTrustHtml(this.htmlContent);
     })
   }
 
