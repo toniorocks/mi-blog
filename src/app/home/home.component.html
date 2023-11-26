@@ -1,44 +1,38 @@
-<!-- <img src="assets/logo.png" class="img-fluid" alt="Responsive image"> -->
-
-
-
 <ul ngbNav #nav="ngbNav" [activeId]="1" class="nav-tabs justify-content-left mt-3">
     <li [ngbNavItem]="1">
         <a ngbNavLink>
             <span class="material-symbols-outlined">home</span>
-            Inicio
+            Home
         </a>
         <ng-template ngbNavContent>
-            <article class="container mb-5">
-
-                <p>Experienced Senior Software Engineer with 10 years of experience in design, development and operation
+            <article class="container mb-1 p-2">
+                <p><img src="https://storage.cloud.google.com/mi-blog-static/marquitochin-avatar.webp" alt="twbs"
+                        class="rounded-circle flex-shrink-0 mx-2 float-start" width="75">
+                    Experienced Senior Software Engineer with 11 years of experience in design, development and
+                    operation
                     of systems and workflow applications, featuring JavaScript, Java, PHP, TypeScript, SQL, NoSQL and
                     AWS cloud services.</p>
 
-                <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+                <p>Skilled at designing mockups with creative tools like Adobe Illustrator, Adobe XD, Microsoft
+                    Visio and Pencil.</p>
+                <p>Proven experience at driving efficient solutions applying good practices and design patterns.</p>
+                <p>Outstanding team player with a positive attitude to champion delivery of results on time and
+                    within budget, having the ability to communicate clearly and effectively when discussing issues
+                    with team members and management.</p>
 
-                    <p>Skilled at designing mockups with creative tools like Adobe Illustrator, Adobe XD, Microsoft
-                        Visio and Pencil.</p>
-                    <p>Proven experience at driving efficient solutions applying good practices and design patterns.</p>
-                    <p>Outstanding team player with a positive attitude to champion delivery of results on time and
-                        within budget, having the ability to communicate clearly and effectively when discussing issues
-                        with team members and management.</p>
+                <p>Strong analytical and problem-solving skills, with the ability to quickly learn new technologies and
+                    apply them to business needs.</p>
 
-                </div>
-                <button class="btn btn-sm btn-primary" (click)="isCollapsed = !isCollapsed">
-                    <span *ngIf="isCollapsed" class="material-symbols-outlined">add</span>
-                    <span *ngIf="!isCollapsed" class="material-symbols-outlined">remove</span>
-                    Mostrar
-                    <span *ngIf="isCollapsed">más</span>
-                    <span *ngIf="!isCollapsed">menos</span>
-                </button>
+                <p>Passionate about technology and innovation, always looking for new challenges and opportunities to
+                    learn and grow.</p>
+
             </article>
         </ng-template>
     </li>
     <li [ngbNavItem]="2">
         <a ngbNavLink>
             <span class="material-symbols-outlined">star</span>
-            Habilidades
+            Skills
         </a>
         <ng-template ngbNavContent>
             <article class="container mb-3">
@@ -76,22 +70,36 @@
     </li>
     <li [ngbNavItem]="3">
         <a ngbNavLink>
-            <span class="material-symbols-outlined">workspace_premium</span>
-            Certificaciones</a>
+            <span class="material-symbols-outlined">workspace_premium</span>Certifications</a>
+
+        
+
         <ng-template ngbNavContent>
             <div class="container my-5">
-                <div class="row">
-                    <div class="col-md-4" *ngFor="let cert of certifications;">
-                        <div class="card my-2 cert-card">
-                            <img src="assets/{{cert.certImage}}" class="rounded card-img-top" alt="Certification Logo">
-                            <div class="card-body">
-                                <h5 class="card-title">{{cert.certName}}</h5>
-                                <p class="card-text">{{cert.certInstitution}}</p>
-                            </div>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item d-flex justify-content-between align-items-start" *ngFor="let cert of certifications;">
+                        <div class="ms-2 me-auto">
+                            <img src="assets/{{cert.certImage}}" class="rounded" alt="Certification Logo" width="50px" height="50px">
+                            <div class="fw-bold">{{cert.certName}}</div>
+                            {{cert.certInstitution}}
                         </div>
-                    </div>
-
-                </div>
+                        <span class="badge bg-primary rounded-pill">{{cert.certYear}}</span>
+                    </li>
+                    <!-- <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Subheading</div>
+                            Content for list item
+                        </div>
+                        <span class="badge bg-primary rounded-pill">14</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">Subheading</div>
+                            Content for list item
+                        </div>
+                        <span class="badge bg-primary rounded-pill">14</span>
+                    </li> -->
+                </ol>
             </div>
 
         </ng-template>
@@ -100,7 +108,7 @@
 
 <div [ngbNavOutlet]="nav" class="mt-2"></div>
 
-<div class="container mb-5">
+<!-- <div class="container mb-5">
     <ngb-carousel>
         <ng-template ngbSlide>
             <div class="picsum-img-wrapper">
@@ -123,4 +131,4 @@
             </div>
         </ng-template>
     </ngb-carousel>
-</div>
+</div> -->

@@ -71,37 +71,44 @@ export class HomeComponent implements OnInit {
     {
       certName:'DevOps',
       certInstitution:'The University of Chicago',
-      certImage: 'mais-uchicago.png'
+      certImage: 'mais-uchicago.png',
+      certYear: 2022
     },
     {
       certName:'Cloud Practitioner',
       certInstitution:'Amazon Web Services',
-      certImage: 'mais-aws-practi.png'
+      certImage: 'mais-aws-practi.png',
+      certYear: 2022
     },
     {
       certName:'Partner Accreditation (Technical)',
       certInstitution:'Amazon Web Services',
-      certImage: 'mais-aws-technical.png'
+      certImage: 'mais-aws-technical.png',
+      certYear: 2023
     },
     {
       certName: 'Agile Way of Working Foundation',
       certInstitution: 'TCS iEvolve',
-      certImage:'mais-tcs.png'
+      certImage:'mais-tcs.png',
+      certYear: 2021
     },
     {
       certName: 'Growth & Transformation : Awareness E0 Proficiency',
       certInstitution: 'TCS iEvolve',
-      certImage:'mais-tcs.png'
+      certImage:'mais-tcs.png',
+      certYear: 2021
     },
     {
       certName: 'Software Security Assurance - HiTech',
       certInstitution: 'TCS iEvolve',
-      certImage:'mais-tcs.png'
+      certImage:'mais-tcs.png',
+      certYear: 2021
     },
     {
       certName: 'Wings : Core Articulation_Articulate Right Curriculum',
       certInstitution: 'TCS iEvolve',
-      certImage:'mais-tcs.png'
+      certImage:'mais-tcs.png',
+      certYear: 2021
     }
   ]
 
