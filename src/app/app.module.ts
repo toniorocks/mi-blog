@@ -17,6 +17,7 @@ import { PublicacionComponent } from './publicaciones/publicacion/publicacion.co
 
 import { MiDatesDirective } from './mi-dates.directive';
 import { appReducers } from './app.reducer';
+import { LoadingComponent } from './_helpers/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { appReducers } from './app.reducer';
     CondicionesComponent,
     PublicacionesComponent,
     PublicacionComponent,
-    MiDatesDirective
+    MiDatesDirective,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
