@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { StoreModule } from '@ngrx/store';
@@ -18,6 +18,7 @@ import { PublicacionComponent } from './publicaciones/publicacion/publicacion.co
 import { MiDatesDirective } from './mi-dates.directive';
 import { appReducers } from './app.reducer';
 import { LoadingComponent } from './_helpers/loading/loading.component';
+import { LoadingService } from './_services/interceptors/loading.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,11 @@ import { LoadingComponent } from './_helpers/loading/loading.component';
       }
     })
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoadingService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
