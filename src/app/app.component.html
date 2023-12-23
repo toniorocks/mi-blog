@@ -102,7 +102,7 @@
 						<div class="d-flex gap-2 w-100 justify-content-between">
 							<div>
 								<h6 class="mb-0">{{ item.title }}</h6>
-								<p class="mb-0 opacity-75">{{ getFirstWords(item.content) }} ...</p>
+								<p class="mb-0 opacity-75">{{ getFirstWords(item?.content) }} ...</p>
 							</div>
 							<small calculateDateDifference [date]="item.updated">Loading</small>
 						</div>

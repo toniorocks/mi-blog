@@ -17,6 +17,7 @@ export class MiDatesDirective implements OnInit {
     const weeksDiff = Math.floor(daysDiff / 7);
     const monthsDiff = Math.floor(daysDiff / 30);
     this.el.nativeElement.innerText = `${daysDiff} day(s) ago.`
+    this.el.nativeElement.style.color = 'yellow';
 
     console.log('date', targetDate);
   }

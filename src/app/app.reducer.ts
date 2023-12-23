@@ -1,10 +1,13 @@
 import { ActionReducerMap } from '@ngrx/store';
-import { uiReducer, State } from './_store/ui.reducer';
+import { uiReducer, UiState } from './_store/ui.reducer';
+import { postReducer, PostState } from './_store/post.reducer';
 
 export interface AppState {
-   ui: State;
+   ui: UiState,
+   posts: PostState,
 }
 
 export const appReducers: ActionReducerMap<AppState> = {
    ui: uiReducer,
+   posts: postReducer,
 }
